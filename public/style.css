@@ -1,0 +1,362 @@
+/*Default*****************************/
+
+html{
+    font-family: 'Chivo', sans-serif;
+    
+    
+}
+
+.body-home{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: oklch(50% 0.20 198); 
+    background-image:url("assets/lines2.png");
+    background-position: center;   
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+
+.body-portfolio{
+    margin: auto;
+    width: 100%;
+    height: 100vh;
+    background-color: oklch(50% 0.20 198);
+   
+    
+}
+
+/*nav bar*************************************************/
+.navbar {
+    position: sticky;
+    overflow: hidden;
+    height: 63px;
+    position: sticky;
+    background-color: oklch(45% 0.20 200);
+    top: 0;
+    z-index: 1000;
+   
+}
+
+.navbar a {
+    float: right;
+    display: block;   
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    position: relative;
+}
+
+.navbar ul {
+    margin: 8px 0 0 0;
+    list-style: none;    
+}
+
+nav ul li a::after{
+    content: '';
+    width: 0;
+    height: 4px;
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-60%);
+    background: linear-gradient(90deg, rgba(255, 192, 203, 0.747), rgba(4, 194, 194, 0.952));
+    transition: width 0.3s;
+}
+
+.navbar ul li a:hover::after{
+    width: 40%;
+    
+}
+/*side navbar**************************************/
+.side-nav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1200;
+    top: 0;
+    left: 0;
+    background-color:  #d4b4b3a9;
+    opacity: 20;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.8s;
+    transition-timing-function: ease-in-out;
+}
+
+.side-nav a {
+    padding: 10px 10px 10px 30px;
+    text-decoration: none;
+    font-size: 30px;
+    color: #f8746d;
+    display: block;
+    transition: 0.3s;
+}
+
+.side-nav a:hover {
+    color: #fff;
+}
+
+.side-nav .btn-close {
+    position: absolute;
+    top: 40px;
+    right: 22px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+/*Home header****************************************/
+
+.home-header {
+    margin-left: 10%;
+    color: #fff;
+    position: absolute;
+    bottom: 10%;
+    text-shadow: 1px 1px 25px rgb(25, 62, 66), 0 0 150px rgba(151, 37, 151, 0.421), 0 0 5px rgb(10, 40, 49);
+    
+}
+
+.home-header h3{
+    font-size: 80px;
+    font-weight: 400;
+    margin: 10px 0 10px -5px;
+    margin-bottom: 20px;
+    margin-left:40px;
+    animation: h2 1.8s ease-in-out;
+}
+
+.home-header h1{
+    font-size: 150px;
+    line-height: 100px;
+    margin: 10px 0 10px -5px;   
+    color: rgba(243, 128, 147, 0.999);
+    animation: h1 1.8s ease-out;
+}
+
+@keyframes h1{
+    0%{
+        margin: 10px 0 10px -1600px;
+       
+
+    }
+    100%{
+        margin: 10px 0 10px -5px;
+    }
+   
+}
+
+.home-header h2{
+
+    font-size: 60px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-style: italic;
+    animation: h2 1.8s ease-in-out;
+   
+}
+
+
+
+@keyframes h2{
+    0%{
+        opacity: 0;
+       
+
+    }
+    100%{
+       opacity:100%;
+    }
+   
+}
+
+.home-header a, .grid a{
+    margin-top: 20px;
+    font-size: 20px;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin-right: 20px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+    animation: h2 1.8s ease-in-out;
+}
+
+.home-header a span, .grid a span{
+    font-size: 20px;   
+    margin-left: 5px;
+    
+}
+
+.home-header a:hover, .grid a:hover{
+    border: none;
+    background: linear-gradient(90deg, rgba(255, 192, 203, 0.747), rgba(4, 194, 194, 0.952));width: 30%;
+    
+}
+/*About page*********************************/
+.about-me h2{
+    text-align: center;
+    margin-left: 80px;
+    font-size: 60px;
+    text-shadow: 2px 2px 2px rgb(82, 79, 79);
+    color:rgba(255, 192, 203, 0.999);
+}
+
+.text, .portfolio{
+    display:flex;
+    align-items: center;
+    margin:0 150px;
+    color: #fff;  
+    
+}
+
+.text p{
+    margin-left:20px;
+    font-size: 16px;
+    width: 50%;
+   
+}
+
+.text img{
+
+    transform: scaleX(-1)
+}
+
+/*Portfolio page****************************/
+.body-portfolio h1{
+    font-size: 60px;
+    color: #d98b87;
+    text-shadow: 2px 2px 2px rgb(82, 79, 79);
+    text-align: center;
+}
+
+.grid{    
+    
+    display: grid;
+    grid-template-areas:
+    'img-1 work-1'
+    'work-2 img-2'
+    'img-3 work-3';
+    padding: 40px 0;      
+    color: #fff;
+    margin: 10px 30px;
+}
+
+.grid img{    
+    box-shadow: 10px 10px 20px #111111a8;
+}
+
+.grid img:hover{
+    opacity: 70%;
+    
+}
+
+.work-1, .work-3, .work-2{
+    font-size: 30px;
+    background-color: #efa6a2;    
+    text-align: center;
+    padding: 20px;
+    
+}
+
+.img-1, .img-2, .img-3{
+    background-color: oklch(45% 0.20 200);
+    text-align: center;
+    padding: 40px;
+}
+
+/*footer************************************/
+
+footer{    
+    background-color: rgba(231, 160, 172, 0.91);
+    color: #ddd;
+    display: flex;
+    height:auto;
+    padding: 15px;
+    width: 100%;    
+    color: #ddd;
+}
+
+.footer-content{    
+    display: grid;    
+    margin:0px auto;
+    justify-items: center;
+     
+}
+
+.footer-content h3{  
+    text-align: center;
+    margin: 20px 0px;
+    font-size: 30px;
+    font-weight: 400;    
+}
+
+.footer-content p{
+    text-align: center;
+    max-width: 500px;      
+    font-size: 1.5em; 
+}
+
+
+.footer-bottom{    
+    background-color:oklch(45% 0.20 198);
+    width: 100%;
+    padding: 1px;
+    text-align: center;
+}
+
+.footer-bottom p{
+    font-size: 12px;
+    word-spacing: 2px;
+    text-align: center;
+    color: #fff;
+}
+
+
+.footer-bottom span{
+    font-size: 13px;
+    color: rgb(231, 86, 110);
+}
+
+.social{
+    display:flex;   
+}
+
+ul.social{
+    padding-left: 0;
+    list-style: none;
+    align-items: center;           
+}
+
+.social a{
+    text-decoration: none;
+    color: #fff;
+    padding: 15px; 
+}
+
+.social a i{
+    font-size: 2rem; 
+}
+
+/*this is another example of psudo class**************************************/
+.social a:hover i{
+    color: rgba(11, 132, 175, 0.571);
+}
+
+
+
+
+
+
+
+
+
+ 
+
+
+

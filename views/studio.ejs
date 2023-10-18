@@ -1,0 +1,23 @@
+const express = require ('express') // in this line and the following, I am importing the path an express
+const path = require ('path');
+const app = express();
+const port = process.env.Port || 5000; // This is seting up the port 8000 and any other port envieronment
+
+
+app.set('view engine', 'ejs');
+
+app.use(express.static(path.join(__dirname,'public'))); //this is the path to the public folder
+
+app.get('/weather', async (req, res) => { // This is saying that when the landing page loads print the portfolio value to the html through ejs
+    let ejs = require('ejs');
+    let portfolio = "The cute weather app is a delightful weather app that not only keeps you informed about the weather conditions \
+    but also adds a touch of cuteness and personality to your daily forecast. The data was sourced from the OpenWeather API.\
+    This app offers a unique and charming experience for users who want to stay up-to-date with the weather. \
+    I created this project to learn how to use APIs in my Creative Coding class. ";
+    let html = await ejs.renderFile(path.join(__dirname, 'views/weather.ejs'), {portfolio: portfolio});
+    res.send(html);    
+});
+
+app.listen(port, () => { //this will start the specified server
+    console.log(`App listening on port ${port}`);
+});
